@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 import store from './redux/store.redux';
 import { Provider } from 'react-redux';
@@ -32,6 +32,7 @@ function App() {
         </a>
       </header> */}
           <NavbarLayout />
+          <Redirect from="/" to="/login" />
           <Route exact path="/login" component={LoginComponent} />
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
